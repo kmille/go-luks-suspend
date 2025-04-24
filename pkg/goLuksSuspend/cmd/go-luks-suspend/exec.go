@@ -13,7 +13,7 @@ import (
 	"syscall"
 	"time"
 
-	g "goLuksSuspend"
+	g "github.com/kmille/go-luks-suspend/pkg/goLuksSuspend"
 
 	"github.com/guns/golibs/errutil"
 	"github.com/guns/golibs/process"

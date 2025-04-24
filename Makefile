@@ -1,20 +1,19 @@
 .PHONY: all install
 
 INSTALL_DIR := /usr/lib/go-luks-suspend
-GOPATH := "$(CURDIR):$(CURDIR)/vendor"
 
 all: go-luks-suspend initramfs-suspend
 
 update-version:
 ifdef VERSION
-	/usr/bin/sed -i "s/^const Version = .*/const Version = \"$(VERSION)\"/" src/goLuksSuspend/version.go
+	/usr/bin/sed -i "s/^const Version = .*/const Version = \"$(VERSION)\"/" pkg/goLuksSuspend/version.go
 endif
 
 go-luks-suspend: update-version
-	GOPATH=$(GOPATH) go build goLuksSuspend/cmd/go-luks-suspend
+	go build ./pkg/goLuksSuspend/cmd/go-luks-suspend
 
 initramfs-suspend: update-version
-	GOPATH=$(GOPATH) go build goLuksSuspend/cmd/initramfs-suspend
+	go build ./pkg/goLuksSuspend/cmd/initramfs-suspend
 
 install: all
 	install -Dm755 go-luks-suspend "$(DESTDIR)$(INSTALL_DIR)/go-luks-suspend"

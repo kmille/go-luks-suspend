@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	g "goLuksSuspend"
+	g "github.com/kmille/go-luks-suspend/pkg/goLuksSuspend"
 )
 
 func main() {

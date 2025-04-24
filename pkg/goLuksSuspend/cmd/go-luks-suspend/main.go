@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	g "goLuksSuspend"
+	g "github.com/kmille/go-luks-suspend/pkg/goLuksSuspend"
 
 	"github.com/guns/golibs/sys"
 )

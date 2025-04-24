@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"syscall"
 
-	g "goLuksSuspend"
+	g "github.com/kmille/go-luks-suspend/pkg/goLuksSuspend"
 
 	"github.com/guns/golibs/editreader"
 	"github.com/guns/golibs/sys"
